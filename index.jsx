@@ -1,5 +1,11 @@
-/** @jsx React.DOM */
-'use strict'
-let React = require('react');
+// /** @jsx React.DOM */
+// 'use strict'
 var Hello = require('./Hello');
-React.renderComponent(<Hello />, document.getElementById('content'))
+
+var React = require('react');
+
+
+React.render(
+    Hello(),
+    document.getElementById('grid')
+);

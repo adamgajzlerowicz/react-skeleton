@@ -46,8 +46,8 @@
 
 	/** @jsx React.DOM *//** @jsx React.DOM */
 	'use strict'
-	var React = __webpack_require__(1)
-	var Hello = __webpack_require__(2)
+	let React = __webpack_require__(1);
+	var Hello = __webpack_require__(2);
 	React.renderComponent(Hello(null), document.getElementById('content'))
 
 
