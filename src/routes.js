@@ -1,15 +1,7 @@
 import React from 'react';
 import { Router, Route, Link, browserHistory} from 'react-router';
+import { Container } from './components/container';
 
-var Container = React.createClass({
-    render() {
-        return <div class="container">
-            <Link to='foo' >Link1</Link>
-            <Link to='bar' >Link2</Link>
-            {this.props.children}
-        </div>
-    }
-});
 var Child1 = React.createClass({
     render(){
         return  (
@@ -32,7 +24,8 @@ var Child2 = React.createClass({
 });
 
 
-module.exports.Routes = (
+
+var Routes = (
     <Router history={browserHistory}>
 
         <Route path="/" component={Container}>
@@ -43,3 +36,4 @@ module.exports.Routes = (
     </Router>
 );
 
+export {Routes}
