@@ -2,7 +2,7 @@ require("./../node_modules/bootstrap/dist/css/bootstrap.min.css")
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Link, browserHistory} from 'react-router';
-import {routes} from './routes';
+import {Routes} from './routes';
 
 export class App extends React.Component {
 	render() {
@@ -14,4 +14,4 @@ export class App extends React.Component {
 	}
 }
 
-ReactDOM.render(routes, document.querySelector("#myApp"));
+ReactDOM.render(Routes, document.querySelector("#myApp"));

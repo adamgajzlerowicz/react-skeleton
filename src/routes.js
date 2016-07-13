@@ -32,13 +32,14 @@ var Child2 = React.createClass({
 });
 
 
-module.exports.routes = (
+module.exports.Routes = (
     <Router history={browserHistory}>
 
         <Route path="/" component={Container}>
-            <Route path="foo" component={Child2}/>
-            <Route path="bar" component={Child1} />
+            <Route path="foo" component={Child1} />
+            <Route path="bar" component={Child2}/>
         </Route>
 
     </Router>
 );
+
