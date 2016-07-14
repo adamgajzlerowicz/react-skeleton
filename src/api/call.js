@@ -1,15 +1,21 @@
-require('whatwg-fetch');
+var Ajax = require('ajax');
 
 let commonPart = 'https://api.imgur.com/3/';
+
 let Call = function(url){
-    fetch(commonPart + url + ".json",{
-        headers:{
-            "Authorization": "Client-ID ab003787db82196",
-            "Access-Control-Allow-Headers": "authorization",
-            "Access-Control-Allow-Origin" : "*"
-        }
-    }).then( result => {
-        console.log(result);
+
+    return new Promise(function(res, rej){
+
+        Ajax.get(commonPart + url, {
+
+            "Authorization": "Client-ID ab003787db82196"
+
+        }, function(data){
+
+            res(data);
+
+        });
+
     })
 };
 

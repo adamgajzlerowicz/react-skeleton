@@ -4,7 +4,9 @@ import { Container } from './components/container';
 
 let Call = require('./api/call');
 
-Call('topics/defaults');
+Call('topics/defaults').then((data)=>{
+    console.log(data);
+});
 
 var Child1 = React.createClass({
     render(){

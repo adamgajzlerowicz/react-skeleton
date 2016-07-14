@@ -5,6 +5,7 @@ var Container = React.createClass({
     render() {
         return <div class="container">
             <div className="header">
+                <Link to='/' >Home</Link>
                 <Link to='foo' >Link1</Link>
                 <Link to='bar' >Link2</Link>
             </div>
