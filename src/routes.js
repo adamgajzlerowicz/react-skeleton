@@ -2,6 +2,10 @@ import React from 'react';
 import { Router, Route, Link, browserHistory} from 'react-router';
 import { Container } from './components/container';
 
+let Call = require('./api/call');
+
+Call('topics/defaults');
+
 var Child1 = React.createClass({
     render(){
         return  (
