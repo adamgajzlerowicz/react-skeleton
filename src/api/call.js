@@ -4,7 +4,7 @@ let commonPart = 'https://api.imgur.com/3/';
 
 let Call = function(url){
 
-    return new Promise(function(res, rej){
+    return new Promise(function(res){
 
         Ajax.get(commonPart + url, {
 
@@ -19,4 +19,6 @@ let Call = function(url){
     })
 };
 
-module.exports = Call;
+module.exports = {
+    get: Call
+};
