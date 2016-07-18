@@ -1,19 +1,18 @@
 import React from 'react';
-import Call from '../api/call';
-const _ = require('underscore');
+import Reflux from 'reflux';
+import TopicStore from '../stores/topics-store';
+
 var Topics = React.createClass({
+    mixins:[
+        Reflux.listenTo(TopicStore, 'onChange')
+    ],
     getInitialState:function(){
         return {
             topics: []
         }
     },
     componentWillMount:function(){
-        var that = this;
-        Call.get('topics/defaults').then(data=>{
-            this.setState({
-                topics:data.data
-            });
-        })
+       TopicStore.getTopics();
     },
     render:function(){
         return <div>
@@ -26,6 +25,11 @@ var Topics = React.createClass({
             return <li>
                 {topic.description}
             </li>
+        })
+    },
+    onChange: function(event, topics){
+        this.setState({
+            topics: topics
         })
     }
 });
