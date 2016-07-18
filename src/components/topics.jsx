@@ -1,6 +1,7 @@
 import React from 'react';
 import Reflux from 'reflux';
 import TopicStore from '../stores/topics-store';
+import Actions from '.././actions';
 
 var Topics = React.createClass({
     mixins:[
@@ -12,7 +13,7 @@ var Topics = React.createClass({
         }
     },
     componentWillMount:function(){
-       TopicStore.getTopics();
+       Actions.getTopics();
     },
     render:function(){
         return <div>
